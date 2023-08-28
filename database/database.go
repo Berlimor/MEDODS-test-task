@@ -29,3 +29,10 @@ func DBDisconnect(client *mongo.Client) {
 		panic(err)
 	}
 }
+
+func AddNewDocumentForTest(client *mongo.Client, user interface{}) {
+	coll := client.Database("user-tokens").Collection("JWT")
+	if _, err := coll.InsertOne(context.TODO(), user); err != nil {
+		panic(err)
+	}
+}

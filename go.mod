@@ -3,6 +3,7 @@ module MEDODS-test-task
 go 1.21.0
 
 require (
+	MEDODS-test-task/database v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/joho/godotenv v1.5.1
