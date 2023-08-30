@@ -12,3 +12,9 @@
 ```
 docker-compose up --build
 ```
+
+# Чтобы протестировать
+В файле main.go, в фуннкции main, перед запуском сервера, я создаю нового пользователя в базе. Для тестов работать надо именно с ним, ведь эндпоинта для создания нового пользователя нет.
+- GUID: a6bcd248-c9ce-4475-9caf-b3313af3f14c
+* access_token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJHVUlEIjoiYTZiY2QyNDgtYzljZS00NDc1LTljYWYtYjMzMTNhZjNmMTRjIiwic3ViIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjkzMTQ0NDExLCJpYXQiOjE2OTMxNDQ0MTF9.tE_izf1PJcOsqgi5DRI3hL0_V4Sf1HfES68WEJKsRU8MOjW3X52n-HA4RsJMYgxg9sgigmvpJtd-69YY5QyXzg
+- refresh-token: YWJjZGVBQkNERTEyMyFAIyQl
