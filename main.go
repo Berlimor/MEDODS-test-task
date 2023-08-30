@@ -56,7 +56,7 @@ func main() {
 	router.GET("/auth/token/:guid", getTokenPair)
 	router.GET("/auth/refresh/:refresh", getRefresh)
 
-	router.Run("localhost:8080")
+	router.Run(":8000")
 }
 
 

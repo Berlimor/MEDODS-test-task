@@ -6,7 +6,6 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -33,20 +32,20 @@ func DBDisconnect(client *mongo.Client) {
 
 func AddNewDocumentForTest(client *mongo.Client, user interface{}) {
 	db := client.Database("user-tokens")
-	allNames, err := db.ListCollectionNames(context.TODO(), bson.D{})
-	if err != nil {
-		panic(err)
-	}
-	exists := false
-	for _, name := range allNames {
-		if name == "JWT" {
-			exists = true
-			break
-		}
-	}
-	if !exists{
-		db.CreateCollection(context.TODO(), "JWT")
-	}
+	// allNames, err := db.ListCollectionNames(context.TODO(), bson.D{})
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// exists := false
+	// for _, name := range allNames {
+	// 	if name == "JWT" {
+	// 		exists = true
+	// 		break
+	// 	}
+	// }
+	// if !exists{
+		// db.CreateCollection(context.TODO(), "JWT")
+	// }
 	coll := db.Collection("JWT")
 	if _, err := coll.InsertOne(context.TODO(), user); err != nil {
 		panic(err)
